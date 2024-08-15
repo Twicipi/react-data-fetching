@@ -35,11 +35,11 @@ function App() {
     fetchData();
   }, [count]);
 
+  if (count === 1) {
+  }
+
   return (
     <main className="text-white flex flex-col items-center bg-gray-900 h-screen">
-      <header>
-        <h1>Hello Worlds</h1>
-      </header>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
@@ -73,8 +73,11 @@ function App() {
       <div className="flex gap-3">
         <p className="text-xl font-extrabold underline">Page: {count}</p>
         <button
-          className="rounded-full transition-colors w-40 bg-gray-500 hover:bg-gradient-to-tr from-gray-500 from-20% via-gray-600 via-30% to-gray-700 to-90% hover:border-4"
+          className={`rounded-full transition-colors w-40 bg-gray-500 hover:bg-gradient-to-tr from-gray-500 from-20% via-gray-600 via-30% to-gray-700 to-90% hover:border-4 ${
+            count === 1 ? "opacity-50 cursor-not-allowed" : ""
+          }`}
           onClick={PrevPage}
+          disabled={count === 1}
         >
           Prev Page
         </button>
