@@ -3,7 +3,7 @@ import ButtonGroup from "../molecules/ButtonGroup";
 
 const ArticleTemplate = ({ count, article, onPrevClick, onNextClick, loading, error }) => {
   return (
-    <main className="text-white flex flex-col items-center bg-gray-900 h-screen">
+    <main className="text-white flex flex-col items-center bg-gray-900 h-screen px-2 sm:px-4">
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <ArticleCard {...article} />

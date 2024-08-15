@@ -1,14 +1,13 @@
 const Text = ({ size, children, additionalClasses = "" }) => {
-    const sizeClasses = {
-      small: "text-sm",
-      medium: "text-xl",
-      large: "text-4xl",
-    };
-  
-    return (
-      <p className={`${sizeClasses[size]} ${additionalClasses}`}>{children}</p>
-    );
+  const sizeClasses = {
+    small: "text-xs sm:text-sm",
+    medium: "text-base sm:text-xl",
+    large: "text-xl sm:text-2xl",
   };
-  
-  export default Text;
-  
+
+  return (
+    <p className={`${sizeClasses[size]} ${additionalClasses}`}>{children}</p>
+  );
+};
+
+export default Text;
