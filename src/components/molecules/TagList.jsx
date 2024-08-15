@@ -1,4 +1,4 @@
-import Tag from "../atoms/tag";
+import Tag from "../Atoms/tag";
 
 const TagList = ({ tags }) => {
   return (
